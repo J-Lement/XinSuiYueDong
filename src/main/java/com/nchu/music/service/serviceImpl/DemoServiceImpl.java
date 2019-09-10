@@ -1,8 +1,7 @@
-package com.nchu.demo.service.serviceImpl;
+package com.nchu.music.service.serviceImpl;
 
-import com.nchu.demo.bean.User;
-import com.nchu.demo.dao.DemoDao;
-import com.nchu.demo.service.DemoService;
+import com.nchu.music.dao.DemoDao;
+import com.nchu.music.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

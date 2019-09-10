@@ -1,4 +1,4 @@
-package com.nchu.demo.bean;
+package com.nchu.music.bean;
 
 /**
  * @ClassName User

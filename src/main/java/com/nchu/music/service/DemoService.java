@@ -1,6 +1,4 @@
-package com.nchu.demo.service;
-
-import com.nchu.demo.bean.User;
+package com.nchu.music.service;
 
 /**
  * @InterfaceName DemoService

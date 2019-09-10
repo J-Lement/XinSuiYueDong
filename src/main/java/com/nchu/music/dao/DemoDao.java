@@ -1,4 +1,4 @@
-package com.nchu.demo.dao;
+package com.nchu.music.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;

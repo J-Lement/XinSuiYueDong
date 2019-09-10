@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nchu.demo.dao.DemoDao">
+<mapper namespace="com.nchu.music.dao.DemoDao">
     <select id="queryUser"  resultType="integer">
         select count(*)
         from USER
