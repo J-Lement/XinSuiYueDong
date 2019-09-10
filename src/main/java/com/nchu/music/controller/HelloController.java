@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class HelloController {
-//    private static ArrayList<User> users = new ArrayList<>();
     @Autowired
     private DemoService demoService;
 
@@ -34,7 +33,7 @@ public class HelloController {
 
     /**
      * @Author Lement
-     * @Description //TODO 
+     * @Description //检测用户名是否存在
      * @Date 10:48 2019/9/9
      * @Param [userName]
      * @return int
@@ -46,6 +45,13 @@ public class HelloController {
         return 0;
     }
 
+    /**
+     * @Author Lement
+     * @Description //TODO 
+     * @Date 16:27 2019/9/10
+     * @Param [userName, model]
+     * @return java.lang.String
+     **/
     @RequestMapping("/boot/index")
     public String login(@RequestParam("userName") String userName, Model model){
         model.addAttribute("userName", userName);
@@ -59,9 +65,7 @@ public class HelloController {
 
     @RequestMapping("/boot/loginCheck")
     public @ResponseBody int loginCheck(String userName, int password){
-//        System.out.println(userName + " : " + password);
         if (demoService.queryUser(userName, password) > 0) {
-//                System.out.println("p1: " + users.get(i).getPassword() + " p2: " + password);
             return 1;
         }
         return 0;
@@ -69,7 +73,6 @@ public class HelloController {
 
     @RequestMapping("/boot/doRegister")
     public String doRegister(String userName, int password, Model model){
-//        System.out.println("register:" + password);
         demoService.insertUser(userName, password);
         model.addAttribute("userName", userName);
         return "success";
