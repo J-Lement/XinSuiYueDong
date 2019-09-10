@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.demo.dao.DemoDao">
+    <select id="queryUser"  resultType="integer">
+        select count(*)
+        from USER
+        where user_name=#{userName} and password=#{password}
+    </select>
+
+    <select id="queryByName"  resultType="integer">
+        select count(*)
+        from USER
+        where user_name=#{userName}
+    </select>
+
+    <insert id="insertUser">
+        insert into USER (user_name, password)
+        values(#{userName}, #{password})
+    </insert>
+
+</mapper>
