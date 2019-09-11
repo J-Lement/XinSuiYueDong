@@ -33,7 +33,7 @@ public class HelloController {
 
     /**
      * @Author Lement
-     * @Description //TODO 
+     * @Description //检测用户名是否存在
      * @Date 10:48 2019/9/9
      * @Param [userName]
      * @return int
@@ -45,6 +45,13 @@ public class HelloController {
         return 0;
     }
 
+    /**
+     * @Author Lement
+     * @Description //TODO 
+     * @Date 16:27 2019/9/10
+     * @Param [userName, model]
+     * @return java.lang.String
+     **/
     @RequestMapping("/boot/index")
     public String login(@RequestParam("userName") String userName, Model model){
         model.addAttribute("userName", userName);
