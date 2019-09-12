@@ -32,25 +32,6 @@ public class HelloController {
         return "spring boot hello";
     }
 
-    @GetMapping("/boot/login")
-    public String index(){
-        return "login";
-    }
-
-    /**
-     * @Author Lement
-     * @Description //检测用户名是否存在
-     * @Date 10:48 2019/9/9
-     * @Param [userName]
-     * @return int
-     **/
-    @RequestMapping("/boot/check")
-    public @ResponseBody int check(String userName){
-        if (demoService.queryByName(userName) > 0)
-            return 1;
-        return 0;
-    }
-
     /**
      * @Author Lement
      * @Description //TODO 
@@ -62,11 +43,6 @@ public class HelloController {
     public String login(@RequestParam("userName") String userName, Model model){
         model.addAttribute("userName", userName);
         return "index";
-    }
-
-    @RequestMapping("/boot/register")
-    public String register(){
-        return "register";
     }
 
     @RequestMapping("/boot/loginCheck")
