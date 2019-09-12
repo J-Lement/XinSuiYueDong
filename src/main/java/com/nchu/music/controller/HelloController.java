@@ -3,6 +3,7 @@ package com.nchu.music.controller;
 import com.nchu.music.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,29 +21,15 @@ public class HelloController {
     @Autowired
     private DemoService demoService;
 
+    @RequestMapping("/home")
+    public String home(){
+        return "audio";
+    }
+
     @RequestMapping("/boot/hello")
     public @ResponseBody
     String hello(){
         return "spring boot hello";
-    }
-
-    @GetMapping("/boot/login")
-    public String index(){
-        return "login";
-    }
-
-    /**
-     * @Author Lement
-     * @Description //检测用户名是否存在
-     * @Date 10:48 2019/9/9
-     * @Param [userName]
-     * @return int
-     **/
-    @RequestMapping("/boot/check")
-    public @ResponseBody int check(String userName){
-        if (demoService.queryByName(userName) > 0)
-            return 1;
-        return 0;
     }
 
     /**
@@ -56,11 +43,6 @@ public class HelloController {
     public String login(@RequestParam("userName") String userName, Model model){
         model.addAttribute("userName", userName);
         return "index";
-    }
-
-    @RequestMapping("/boot/register")
-    public String register(){
-        return "register";
     }
 
     @RequestMapping("/boot/loginCheck")
