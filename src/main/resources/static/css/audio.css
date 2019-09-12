@@ -1,0 +1,50 @@
+.container{
+    width:100%;
+    min-height:100%;
+    position:relative;
+}
+.body{
+    width:100%;
+    min-height:100%;
+    position:relative;
+}
+#audio{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+}
+
+.lyricsDiv {
+    width: 100%;
+    height:80%;
+    /*background-color:lightblue;*/
+    margin:20px auto;
+    color: #333;
+    overflow: hidden;
+    position: relative;
+    font-family: "微软雅黑";
+}
+
+.lyricsDiv ul {
+    margin-top: 10%;
+    border: solid 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    list-style: none;
+}
+
+.lyricsDiv ul li {
+    width: 100%;
+    height: 60px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.lyricsDiv ul li.active {
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+
