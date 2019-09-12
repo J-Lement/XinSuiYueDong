@@ -2,7 +2,7 @@ package com.nchu.music.bean;
 
 /**
  * @ClassName Admin
- * @Description TODO
+ * @Description 管理员类
  * @Author Lement
  * @Date 2019/9/12 14:57
  */
