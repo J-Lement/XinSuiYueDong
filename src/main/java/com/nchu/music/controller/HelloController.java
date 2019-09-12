@@ -26,6 +26,12 @@ public class HelloController {
         return "audio";
     }
 
+    @ResponseBody
+    @RequestMapping("/hello")
+    public String helloWorld(){
+        return "hello world!";
+    }
+
     @RequestMapping("/boot/hello")
     public @ResponseBody
     String hello(){
