@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * @ClassName Reply
- * @Description TODO
+ * @Description 二级评论类
  * @Author Lement
  * @Date 2019/9/12 15:23
  */

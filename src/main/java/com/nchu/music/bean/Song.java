@@ -5,7 +5,7 @@ import java.util.Date;
 
 /**
  * @ClassName Song
- * @Description TODO
+ * @Description 歌曲信息类
  * @Author Lement
  * @Date 2019/9/12 15:06
  */
