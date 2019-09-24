@@ -54,7 +54,8 @@ $(document).ready(function() {
         var nowLine = getNowLine();
         $("li").eq(nowLine).addClass("active").siblings().removeClass("active");
         if(nowLine >= startMoveLine)
-            $ul.stop(true, true).animate({top : (nowLine - startMoveLine) * lineMove});
+            $ul.stop(true, true).animate({top: (nowLine - startMoveLine) * lineMove});
+        console.log("scrollTop:" + $("ul").scrollTop());
     }
 
     //获取当前行的行号

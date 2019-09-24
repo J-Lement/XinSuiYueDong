@@ -15,6 +15,32 @@ public class Comments {
     private String commentsTime;
     private int songId;
     private int userId;
+    private String songName;
+    private String userName;
+
+    public String getCommentsTime() {
+        return commentsTime;
+    }
+
+    public void setCommentsTime(String commentsTime) {
+        this.commentsTime = commentsTime;
+    }
+
+    public String getSongName() {
+        return songName;
+    }
+
+    public void setSongName(String songName) {
+        this.songName = songName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public int getCommentsId() {
         return commentsId;
@@ -28,7 +54,7 @@ public class Comments {
         return commentsContent;
     }
 
-    public void setCommentContent(String commentContent) {
+    public void setCommentsContent(String commentContent) {
         this.commentsContent = commentContent;
     }
 
@@ -37,7 +63,7 @@ public class Comments {
     }
 
     public void setCommentTime(Date commentTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.commentsTime = sdf.format(commentTime);
     }
 

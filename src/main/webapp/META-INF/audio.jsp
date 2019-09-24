@@ -6,16 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Title</title>
-    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="/css/audio.css" rel="stylesheet">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/audio.js"></script>
 
     <!-- easyui的样式主题文件 -->
@@ -55,55 +51,72 @@
         </div>
 
         <div class="secondBottomDiv">
-            <h3>歌曲评论</h3><h6>（共有134条评论）</h6>
+            <h3>歌曲评论</h3><h6>（共有${commentNum}条评论）</h6>
 
             <hr>
-            <div class="input">
-                <input readonly="true"  placeholder="发表评论" style="width: 98%;margin: 7px">
-            </div>
+
+            <form action="/addComment" method="post">
+                <div class="inputComment">
+                    <%--<input readonly="true"  placeholder="发表评论" style="width: 98%;margin: 7px">--%>
+                    <input type="text" name="songId" value="${songId}" hidden>
+                    <input type="text" name="userId" value="1" hidden>
+                    <textarea name="content" placeholder="发表评论"  rows="5"></textarea>
+                    <input class="easyui-linkbutton" type="submit" value="评论">
+                </div>
+            </form>
+
             <h6>精彩评论</h6>
             <hr>
 
             <div class="comment">
+                <c:forEach items="${commentsList}" var="comments">
+                    <div>
+                        <span style="color: #00bbee">${comments.userName}：</span>
+                        ${comments.commentsContent}
+                        <a href="#">回复</a>
+                        <span class="floatRight">${comments.commentsTime}</span>
+                    </div>
+                </c:forEach>
+
                 <div >
                     <span style="color: #00bbee">冰淇淋：</span>
                     "何谓孤寂？" "清风，艳日，无笑意。" "可否具体？" "左拥，右抱，无情欲。" "可否再具体？" "不得你.
-                    <span class="floatRight">2019年9月16日 17：00</span>
                     <a href="#">回复</a>
+                    <span class="floatRight">2019年9月16日 17：00</span>
                 </div>
 
                 <div >
                     <span style="color: #00bbee">已注销：</span>
                     “何为思念？” “日月，星辰，旷野雨落。” “可否具体？” “山川，江流，烟袅湖泊。” “可否再具体？” “万物是你，无可躲。”
-                    <span class="floatRight">2019年9月16日 17：00</span>
                     <a href="#">回复</a>
+                    <span class="floatRight">2019年9月16日 17：00</span>
                 </div>
 
                 <div >
                     <span style="color: #00bbee">松松松：</span>
                     “何为无救？” “良药、妙方，无可医。” “可否具体？” “扁鹊、华佗，俱无策。” “可否再具体？” “念你成疾。”
-                    <span class="floatRight">2019年9月16日 17：00</span>
                     <a href="#">回复</a>
+                    <span class="floatRight">2019年9月16日 17：00</span>
                 </div>
                 <div >
                     <span style="color: #00bbee">松松松：</span>
                     “何为无救？” “良药、妙方，无可医。” “可否具体？” “扁鹊、华佗，俱无策。” “可否再具体？” “念你成疾。”
-                    <span class="floatRight">2019年9月16日 17：00</span>
                     <a href="#">回复</a>
-                </div>
-
-                <div >
-                    <span style="color: #00bbee">松松松：</span>
-                    “何为无救？” “良药、妙方，无可医。” “可否具体？” “扁鹊、华佗，俱无策。” “可否再具体？” “念你成疾。”
                     <span class="floatRight">2019年9月16日 17：00</span>
-                    <a href="#">回复</a>
                 </div>
 
                 <div >
                     <span style="color: #00bbee">松松松：</span>
                     “何为无救？” “良药、妙方，无可医。” “可否具体？” “扁鹊、华佗，俱无策。” “可否再具体？” “念你成疾。”
-                    <span class="floatRight">2019年9月16日 17：00</span>
                     <a href="#">回复</a>
+                    <span class="floatRight">2019年9月16日 17：00</span>
+                </div>
+
+                <div >
+                    <span style="color: #00bbee">松松松：</span>
+                    “何为无救？” “良药、妙方，无可医。” “可否具体？” “扁鹊、华佗，俱无策。” “可否再具体？” “念你成疾。”
+                    <a href="#">回复</a>
+                    <span class="floatRight">2019年9月16日 17：00</span>
                 </div>
             </div>
         </div>
