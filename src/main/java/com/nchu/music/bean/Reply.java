@@ -62,7 +62,7 @@ public class Reply {
     }
 
     public void setReplyTime(Date replyTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.replyTime = sdf.format(replyTime);
     }
 }

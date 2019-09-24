@@ -12,13 +12,33 @@ import java.util.Date;
 public class Song {
     private int songId;
     private String songName;
-    private int singerId;
+    private String singerName;
     private String songDocument;
     private String lyrics;
-    private String categoryId;
+    private String categoryName;
     private String uploadTime;
     private int playVolume;
     private int download;
+
+    public void setUploadTime(String uploadTime) {
+        this.uploadTime = uploadTime;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getSingerName() {
+        return singerName;
+    }
+
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
+    }
 
     public int getSongId() {
         return songId;
@@ -34,14 +54,6 @@ public class Song {
 
     public void setSongName(String songName) {
         this.songName = songName;
-    }
-
-    public int getSingerId() {
-        return singerId;
-    }
-
-    public void setSingerId(int singerId) {
-        this.singerId = singerId;
     }
 
     public String getSongDocument() {
@@ -60,20 +72,12 @@ public class Song {
         this.lyrics = lyrics;
     }
 
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public String getUploadTime() {
         return uploadTime;
     }
 
     public void setUploadTime(Date uploadTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.uploadTime = sdf.format(uploadTime);
     }
 
