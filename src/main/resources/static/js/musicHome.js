@@ -58,7 +58,7 @@ $(document).ready(function() {
         // var $div = $(".lyricsDiv").target;
         $("li").eq(nowLine).addClass("active").siblings().removeClass("active");
         // console.log(scrollHeight + " 距离：" + (nowLine - startMoveLine) * lineMove);
-        if(nowLine >= startMoveLine && scrollHeight < ((nowLine - startMoveLine) * lineMove)){
+        if(nowLine >= startMoveLine && scrollHeight != ((nowLine - startMoveLine) * lineMove)){
             scrollHeight = (nowLine - startMoveLine) * lineMove;
             $(".lyricsDiv").stop(true, true).animate({scrollTop:scrollHeight});
 
