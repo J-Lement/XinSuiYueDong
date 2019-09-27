@@ -7,23 +7,23 @@ package com.nchu.music.bean;
  * @Date 2019/9/2 18:26
  */
 public class User {
-    private int userId;
+    private Integer userId;
     private String userName;
-    private int password;
+    private Integer password;
     private String userEmial;
-    private int userPhone;
+    private Integer userPhone;
     private String realName;
     private String nation;
     private String province;
     private String city;
-    private int qq;
-    private int isPublic;
+    private Integer qq;
+    private Integer isPublic;
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -35,11 +35,11 @@ public class User {
         this.userName = userName;
     }
 
-    public int getPassword() {
+    public Integer getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(Integer password) {
         this.password = password;
     }
 
@@ -51,11 +51,11 @@ public class User {
         this.userEmial = userEmial;
     }
 
-    public int getUserPhone() {
+    public Integer getUserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(int userPhone) {
+    public void setUserPhone(Integer userPhone) {
         this.userPhone = userPhone;
     }
 
@@ -91,19 +91,19 @@ public class User {
         this.city = city;
     }
 
-    public int getQq() {
+    public Integer getQq() {
         return qq;
     }
 
-    public void setQq(int qq) {
+    public void setQq(Integer qq) {
         this.qq = qq;
     }
 
-    public int getIsPublic() {
+    public Integer getIsPublic() {
         return isPublic;
     }
 
-    public void setIsPublic(int isPublic) {
+    public void setIsPublic(Integer isPublic) {
         this.isPublic = isPublic;
     }
 }

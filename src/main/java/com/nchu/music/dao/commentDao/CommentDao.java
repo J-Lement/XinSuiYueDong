@@ -1,6 +1,7 @@
 package com.nchu.music.dao.commentDao;
 
 import com.nchu.music.bean.Comments;
+import com.nchu.music.bean.Reply;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Date;
@@ -14,9 +15,19 @@ import java.util.List;
  */
 @Mapper
 public interface CommentDao {
-    public int queryCountCommentBySongId(int songId);
+    int queryUserIdByUserName(String userName);
 
-    public void addComment(int songId, int userId, String commentsContent, String commentsTime);
+    int queryCountCommentBySongId(int songId);
 
-    public List<Comments> queryCommentBySongId(int songId);
+    void addComment(int songId, int userId, String commentsContent, String commentsTime);
+
+    List<Comments> queryCommentBySongId(int songId,  int startNum, int pageNum);
+
+    Comments queryCommentsByCommentsId(int commentsId);
+
+    void addReply(int commentsId, Integer userId, int replyUserId, String replyContent, String replyTime);
+
+    List<Reply> queryReplyByCommentsId(int commentsId);
+
+    Reply queryLatestReply(int commentsId);
 }

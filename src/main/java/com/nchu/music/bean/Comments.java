@@ -10,11 +10,11 @@ import java.util.Date;
  * @Date 2019/9/12 15:20
  */
 public class Comments {
-    private int commentsId;
+    private Integer commentsId;
     private String commentsContent;
     private String commentsTime;
-    private int songId;
-    private int userId;
+    private Integer songId;
+    private Integer userId;
     private String songName;
     private String userName;
 
@@ -42,11 +42,11 @@ public class Comments {
         this.userName = userName;
     }
 
-    public int getCommentsId() {
+    public Integer getCommentsId() {
         return commentsId;
     }
 
-    public void setCommentsId(int commentId) {
+    public void setCommentsId(Integer commentId) {
         this.commentsId = commentId;
     }
 
@@ -67,19 +67,19 @@ public class Comments {
         this.commentsTime = sdf.format(commentTime);
     }
 
-    public int getSongId() {
+    public Integer getSongId() {
         return songId;
     }
 
-    public void setSongId(int songId) {
+    public void setSongId(Integer songId) {
         this.songId = songId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }

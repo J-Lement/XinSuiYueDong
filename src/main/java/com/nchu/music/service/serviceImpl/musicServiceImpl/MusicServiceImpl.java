@@ -23,4 +23,9 @@ public class MusicServiceImpl implements MusicService {
     public List<Song> queryAllSong() {
         return musicDao.queryAllSong();
     }
+
+    @Override
+    public Song querySongBySongId(int songId) {
+        return musicDao.querySongBySongId(songId);
+    }
 }

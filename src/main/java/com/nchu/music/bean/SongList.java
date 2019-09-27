@@ -7,31 +7,31 @@ package com.nchu.music.bean;
  * @Date 2019/9/12 15:25
  */
 public class SongList {
-    private int songListId;
-    private int songListName;
-    private int songId;
+    private Integer songListId;
+    private Integer songListName;
+    private Integer songId;
 
-    public int getSongListId() {
+    public Integer getSongListId() {
         return songListId;
     }
 
-    public void setSongListId(int songListId) {
+    public void setSongListId(Integer songListId) {
         this.songListId = songListId;
     }
 
-    public int getSongListName() {
+    public Integer getSongListName() {
         return songListName;
     }
 
-    public void setSongListName(int songListName) {
+    public void setSongListName(Integer songListName) {
         this.songListName = songListName;
     }
 
-    public int getSongId() {
+    public Integer getSongId() {
         return songId;
     }
 
-    public void setSongId(int songId) {
+    public void setSongId(Integer songId) {
         this.songId = songId;
     }
 }

@@ -12,5 +12,7 @@ import java.util.List;
  * @Date 2019/9/18 11:27
  */
 public interface MusicService {
-    public List<Song> queryAllSong();
+    List<Song> queryAllSong();
+
+    Song querySongBySongId(int songId);
 }

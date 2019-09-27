@@ -10,42 +10,64 @@ import java.util.Date;
  * @Date 2019/9/12 15:23
  */
 public class Reply {
-    private int replyId;
-    private int commentId;
-    private int userId;
-    private int replyUserId;
+    private Integer replyId;
+    private Integer commentsId;
+    private Integer userId;
+    private String userName;
+    private Integer replyUserId;
+    private String replyUserName;
     private String replyContent;
     private String replyTime;
 
-    public int getReplyId() {
+    public String getReplyUserName() {
+        return replyUserName;
+    }
+
+    public void setReplyUserName(String replyUserName) {
+        this.replyUserName = replyUserName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setReplyTime(String replyTime) {
+        this.replyTime = replyTime;
+    }
+
+    public Integer getReplyId() {
         return replyId;
     }
 
-    public void setReplyId(int replyId) {
+    public void setReplyId(Integer replyId) {
         this.replyId = replyId;
     }
 
-    public int getCommentId() {
-        return commentId;
+    public Integer getCommentsId() {
+        return commentsId;
     }
 
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
+    public void setCommentsId(Integer commentId) {
+        this.commentsId = commentsId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public int getReplyUserId() {
+    public Integer getReplyUserId() {
         return replyUserId;
     }
 
-    public void setReplyUserId(int replyUserId) {
+    public void setReplyUserId(Integer replyUserId) {
         this.replyUserId = replyUserId;
     }
 
