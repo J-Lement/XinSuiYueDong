@@ -10,15 +10,15 @@ import java.util.Date;
  * @Date 2019/9/12 15:06
  */
 public class Song {
-    private int songId;
+    private Integer songId;
     private String songName;
     private String singerName;
     private String songDocument;
     private String lyrics;
     private String categoryName;
     private String uploadTime;
-    private int playVolume;
-    private int download;
+    private Integer playVolume;
+    private Integer download;
 
     public void setUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;
@@ -40,11 +40,11 @@ public class Song {
         this.singerName = singerName;
     }
 
-    public int getSongId() {
+    public Integer getSongId() {
         return songId;
     }
 
-    public void setSongId(int songId) {
+    public void setSongId(Integer songId) {
         this.songId = songId;
     }
 
@@ -81,19 +81,19 @@ public class Song {
         this.uploadTime = sdf.format(uploadTime);
     }
 
-    public int getPlayVolume() {
+    public Integer getPlayVolume() {
         return playVolume;
     }
 
-    public void setPlayVolume(int playVolume) {
+    public void setPlayVolume(Integer playVolume) {
         this.playVolume = playVolume;
     }
 
-    public int getDownload() {
+    public Integer getDownload() {
         return download;
     }
 
-    public void setDownload(int download) {
+    public void setDownload(Integer download) {
         this.download = download;
     }
 }

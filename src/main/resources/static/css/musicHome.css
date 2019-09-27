@@ -142,11 +142,16 @@ hr {
     color: red;
 }
 
-.comment div{
-    margin-bottom: 10px;
+.comment {
+    /*margin-bottom: 5%;*/
 }
 
-.comment a {
+.comment div{
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.replyA {
     float: right;
     margin-right: 10px;
 }
@@ -155,3 +160,12 @@ hr {
     float: right;
     margin-right: 10px;
 }
+
+.disable {
+    pointer-events: none;
+}
+
+.commentPages {
+    margin-bottom: 5%;
+}
+

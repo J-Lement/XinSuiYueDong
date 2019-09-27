@@ -7,15 +7,15 @@ package com.nchu.music.bean;
  * @Date 2019/9/12 15:18
  */
 public class Singer {
-    private int singerId;
+    private Integer singerId;
     private String singerName;
     private String singerInfomation;
 
-    public int getSingerId() {
+    public Integer getSingerId() {
         return singerId;
     }
 
-    public void setSingerId(int singerId) {
+    public void setSingerId(Integer singerId) {
         this.singerId = singerId;
     }
 

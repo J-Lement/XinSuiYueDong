@@ -7,17 +7,17 @@ package com.nchu.music.bean;
  * @Date 2019/9/12 14:57
  */
 public class Admin {
-    private int adminId;
+    private Integer adminId;
     private String adminName;
     private String password;
     private String adminEmail;
     private String adminPhone;
 
-    public int getAdminId() {
+    public Integer getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(int adminId) {
+    public void setAdminId(Integer adminId) {
         this.adminId = adminId;
     }
 

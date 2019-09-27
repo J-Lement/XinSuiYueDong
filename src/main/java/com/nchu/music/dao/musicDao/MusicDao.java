@@ -13,5 +13,7 @@ import java.util.List;
  */
 @Mapper
 public interface MusicDao {
-    public List<Song> queryAllSong();
+    List<Song> queryAllSong();
+
+    Song querySongBySongId(int songId);
 }
