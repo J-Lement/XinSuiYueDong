@@ -28,4 +28,44 @@
         left join song_data on song.song_id=song_data.song_id
         where song.song_id=#{songId}
     </select>
+
+    <select id="querySongBySongName" resultMap="songResult">
+        select song.song_id, song_name, song_document, lyrics, singer_name, category_name, upload_time, play_volume, download
+        from ((song left join singer on song.singer_id=singer.singer_id)
+        left join category on song.category_id=category.category_id)
+        left join song_data on song.song_id=song_data.song_id
+        where song.song_name like "%"#{songName}"%"
+    </select>
+
+    <select id="queryLatestSong" resultMap="songResult">
+        select song.song_id, song_name, song_document, lyrics, singer_name, category_name, upload_time, play_volume, download
+        from ((song left join singer on song.singer_id=singer.singer_id)
+        left join category on song.category_id=category.category_id)
+        left join song_data on song.song_id=song_data.song_id
+        order by upload_time desc
+        limit #{pageNow},#{pageNum}
+    </select>
+
+    <select id="queryByDownload" resultMap="songResult">
+        select song.song_id, song_name, song_document, lyrics, singer_name, category_name, upload_time, play_volume, download
+        from ((song left join singer on song.singer_id=singer.singer_id)
+        left join category on song.category_id=category.category_id)
+        left join song_data on song.song_id=song_data.song_id
+        order by download desc
+        limit #{pageNow},#{pageNum}
+    </select>
+
+    <select id="queryHotestSong" resultMap="songResult">
+        select song.song_id, song_name, song_document, lyrics, singer_name, category_name, upload_time, play_volume, download
+        from ((song left join singer on song.singer_id=singer.singer_id)
+        left join category on song.category_id=category.category_id)
+        left join song_data on song.song_id=song_data.song_id
+        order by play_volume desc
+        limit #{pageNow},#{pageNum}
+    </select>
+
+    <select id="getSongCount" resultType="int">
+        select count(*)
+        from song
+    </select>
 </mapper>

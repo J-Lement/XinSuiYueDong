@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.music.dao.musicDao.MusicDataDao">
+    <update id="addDownload">
+        update song_data
+        set download = download + 1
+        where song_id=#{songId}
+    </update>
+
+    <update id="addPlayVolume">
+        update song_data
+        set play_volume = play_volume + 1
+        where song_id=#{songId}
+    </update>
+</mapper>

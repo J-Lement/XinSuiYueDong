@@ -41,7 +41,7 @@ public class CommentController {
 
     /**
      * @Author Lement
-     * @Description //通过musicHome.js文件中ajax访问此处，添加一条新的评论，然后返回第一页的评论
+     * @Description //通过musicHome.js文件中ajax访问此处，添加一条新的评论，然后返回第一页的评论(有bug，返回的页数不变)
      * @Date 15:43 2019/9/26
      * @Param [songId, userId, content, pageNow, pageNum]
      * @return java.util.List<com.nchu.music.bean.Comments>
@@ -53,7 +53,7 @@ public class CommentController {
         int userId1 = Integer.parseInt(userId);
         int pageNum1 = Integer.parseInt(pageNum);
         int pageNow1 = Integer.parseInt(pageNow);
-        System.out.println("here1");
+        System.out.println("pageNow:" + pageNow1);
 
         commentService.addComment(songId1, userId1, content);
 

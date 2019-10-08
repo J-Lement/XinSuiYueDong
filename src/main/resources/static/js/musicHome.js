@@ -6,10 +6,15 @@ $(document).ready(function() {
 
     var text;
     var lyricsAddress = $("#lyricsAddress").val();
+
+    console.log("song:" + audio.src + " lyrics:" + lyricsAddress);
     //ajax同步获取歌词文件中的歌词
     $.ajax({url:lyricsAddress,success:function(data){
+        console.log("data:" + data);
             text = data;
-        },async:false});
+        },async:false,error:function () {
+            alert("失败");
+        }});
 
     function analysisLyrics(text){
         textArray = text.split("\n");
@@ -167,4 +172,23 @@ $(document).ready(function() {
     });
 
 
+    //增加下载数量
+    $(".addDownload").click(function () {
+        var songId = $(this).prev().val();
+        $.ajax({
+            async: false,//异步
+            type: "get",//发送方式
+            url: "/addDownload",//发送的地址
+            data: {
+                "songId":songId
+            },
+            datatype: "json",//接收的数据
+            success: function (data) {
+
+            },
+            error: function () {
+                alert("发送失败。。。");
+            }
+        });
+    });
 });
