@@ -9,7 +9,6 @@ package com.nchu.music.bean;
 public class Singer {
     private int singerId;
     private String singerName;
-    private String singerInfomation;
 
     public int getSingerId() {
         return singerId;
@@ -27,11 +26,5 @@ public class Singer {
         this.singerName = singerName;
     }
 
-    public String getSingerInfomation() {
-        return singerInfomation;
-    }
 
-    public void setSingerInfomation(String singerInfomation) {
-        this.singerInfomation = singerInfomation;
-    }
 }

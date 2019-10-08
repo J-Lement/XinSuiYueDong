@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.music.dao.UserDao">
+
+    <insert id="addUser" parameterType="com.nchu.music.bean.User" >
+        insert into user(user_id,user_name,password,phone,email,status)
+        values(user_id,#{userName},#{password},#{phone},#{email},#{status})
+    </insert>
+
+    <select id="checkUserName" parameterType="String" resultType="com.nchu.music.bean.User">
+          select * from user
+          where user_name = #{name}
+    </select>
+    <select id="checkUserEmail" parameterType="String" resultType="com.nchu.music.bean.User">
+          select * from  user
+          where email=#{email}
+    </select>
+
+    <update id="updateStatusByEmail" parameterType="String">
+        update user set status=1 where email=#{email}
+    </update>
+
+    <update id="updateUserById" parameterType="com.nchu.music.bean.User">
+        update user set qq=#{qq},is_public=#{isPublic},nation=#{nation},province=#{province},city=#{city}
+        where user_id=#{userId}
+    </update>
+    <update id="editPasswordByEmail" parameterType="com.nchu.music.bean.User">
+        update  user set password=#{password} where email=#{email}
+    </update>
+
+</mapper>

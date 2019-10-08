@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.music.dao.SingerDao">
+
+    <delete id="deleteSingerByName"  parameterType="String">
+        delete from singer where singer_name=#{name}
+    </delete>
+
+    <select id="selectSingerList" resultType="com.nchu.music.bean.Singer">
+        select * from singer
+    </select>
+
+    <insert id="insertSinger" parameterType="com.nchu.music.bean.Singer">
+        insert into singer values (singer_id,#{singerName})
+    </insert>
+
+
+</mapper>

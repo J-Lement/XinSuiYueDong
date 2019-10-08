@@ -9,14 +9,15 @@ package com.nchu.music.bean;
 public class User {
     private int userId;
     private String userName;
-    private int password;
-    private String userEmial;
-    private int userPhone;
+    private String password;
+    private String email;
+    private String phone;
+    private int status;
     private String realName;
     private String nation;
     private String province;
     private String city;
-    private int qq;
+    private String qq;
     private int isPublic;
 
     public int getUserId() {
@@ -35,29 +36,15 @@ public class User {
         this.userName = userName;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getUserEmial() {
-        return userEmial;
-    }
 
-    public void setUserEmial(String userEmial) {
-        this.userEmial = userEmial;
-    }
-
-    public int getUserPhone() {
-        return userPhone;
-    }
-
-    public void setUserPhone(int userPhone) {
-        this.userPhone = userPhone;
-    }
 
     public String getRealName() {
         return realName;
@@ -91,13 +78,6 @@ public class User {
         this.city = city;
     }
 
-    public int getQq() {
-        return qq;
-    }
-
-    public void setQq(int qq) {
-        this.qq = qq;
-    }
 
     public int getIsPublic() {
         return isPublic;
@@ -106,4 +86,39 @@ public class User {
     public void setIsPublic(int isPublic) {
         this.isPublic = isPublic;
     }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+
 }
