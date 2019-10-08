@@ -28,4 +28,29 @@ public class MusicServiceImpl implements MusicService {
     public Song querySongBySongId(int songId) {
         return musicDao.querySongBySongId(songId);
     }
+
+    @Override
+    public List<Song> querySongBySongName(String songName) {
+        return musicDao.querySongBySongName(songName);
+    }
+
+    @Override
+    public List<Song> queryLatestSong(int pageNow, int pageNum) {
+        return musicDao.queryLatestSong(pageNow, pageNum);
+    }
+
+    @Override
+    public List<Song> queryByDownload(int pageNow, int pageNum) {
+        return musicDao.queryByDownload(pageNow, pageNum);
+    }
+
+    @Override
+    public List<Song> queryHotestSong(int pageNow, int pageNum) {
+        return musicDao.queryHotestSong(pageNow, pageNum);
+    }
+
+    @Override
+    public int getSongCount() {
+        return musicDao.getSongCount();
+    }
 }

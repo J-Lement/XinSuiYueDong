@@ -15,4 +15,14 @@ public interface MusicService {
     List<Song> queryAllSong();
 
     Song querySongBySongId(int songId);
+
+    List<Song> querySongBySongName(String songName);
+
+    List<Song> queryLatestSong(int pageNow, int pageNum);
+
+    List<Song> queryByDownload(int pageNow, int pageNum);
+
+    List<Song> queryHotestSong(int pageNow, int pageNum);
+
+    int getSongCount();
 }

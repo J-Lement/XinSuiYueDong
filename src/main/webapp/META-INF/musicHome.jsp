@@ -48,7 +48,8 @@
             <img src="/images/music1.png" >
             <div class="buttonDiv">
                 <button class="btn btn-primary btn-sm">收藏到列表</button>
-                <a class="btn btn-primary btn-sm" href="${song.songDocument}" download="${song.songDocument}">下载</a>
+                <input type="text" name="songId" value="${songId}" hidden>
+                <a class="btn btn-primary btn-sm addDownload" href="${song.songDocument}" download="${song.songDocument}">下载</a>
                 <input id="songAddress" type="text" value="${song.songDocument}" hidden>
                 <input id="lyricsAddress" type="text" value="${song.lyrics}" hidden>
             </div>
@@ -111,24 +112,7 @@
 
     </div>
 
-<audio id='audio' controls="controls" style="width: 100%">你的浏览器不支持喔！</audio>
-
-<%--<div class='MusicPanel'>--%>
-    <%--<div class='PanelLeft'><div class='circle'><span class='icon glyphicon-heart'></span></div></div> <!-- Like Button -->--%>
-
-    <%--<div class='PanelRight'>--%>
-        <%--<div class='Prev'><span class='icon glyphicon-step-backward'></span></div> <!-- Prev Song Button -->--%>
-        <%--<div id='Play' class='Play'><span class='icon glyphicon-play'></span></div> <!-- Play & Pause Button -->--%>
-        <%--<div class='Next'><span class='icon glyphicon-step-forward'></span></div> <!-- Next Song Button -->--%>
-        <%--<div class="Song"><span class='SongAuthor'>Greyson Chance</span></br><span class='SongName'>Summertrain</span></div> <!-- Song Title -->--%>
-
-        <%--<div class="Process"> <!-- Process -->--%>
-            <%--<div class="ProcessAll" ></div> <!-- ProcessAll -->--%>
-            <%--<div class="ProcessNow"></div> <!-- ProcessNow -->--%>
-            <%--<div class="SongTime">00:00&nbsp;|&nbsp;00:00</div> <!-- Time -->--%>
-        <%--</div> <!-- Process End -->--%>
-    <%--</div> <!-- PanelRight End -->--%>
-<%--</div> <!-- MusicPanel End -->--%>
+<audio id='audio' controls="controls" autoplay="autoplay" style="width: 100%">你的浏览器不支持喔！</audio>
 </div>
 </body>
 </html>
