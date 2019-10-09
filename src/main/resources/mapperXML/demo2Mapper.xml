@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.music.dao.songManageDao.DemoCategory">
+    <resultMap id="ResultMap" type="com.nchu.music.bean.Category">
+        <id property="categoryId" column="category_id"/>
+        <result property="categoryName" column="category_name"/>
+    </resultMap>
+    <select id="queryAllCategory"  resultType="integer" resultMap="ResultMap">
+        select *
+        from category
+    </select>
+    <select id="findById"  resultType="integer" resultMap="ResultMap">
+        select *
+        from category
+        WHERE category_id = #{categoryId}
+    </select>
+    <update id="updateCategory"  >
+        update  category  set category_id=#{categoryId},category_name=#{categoryName}
+        WHERE category_id = #{categoryId}
+    </update>
+    <delete id="deleteCategory"  >
+       DELETE FROM category
+       WHERE category_id = #{categoryId}
+    </delete>
+
+    <insert id="insertCategory" >
+        insert into category( category_id,category_name)
+        values(#{categoryId},#{categoryName})
+    </insert>
+
+</mapper>
