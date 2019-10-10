@@ -14,6 +14,16 @@
         <result property="playVolume" column="play_volume"/>
         <result property="download" column="download"/>
     </resultMap>
+
+    <resultMap id="songListResult" type="com.nchu.music.bean.Song">
+        <id property="songId" column="song_id" />
+        <result property="songName" column="song_name" />
+        <result property="songDocument" column="song_document"/>
+        <result property="singerName" column="singer_name"/>
+        <result property="categoryName" column="category_name"/>
+        <result property="lyrics" column="lyrics"/>
+    </resultMap>
+
     <select id="queryAllSong" resultMap="songResult">
         select song.song_id, song_name, song_document, lyrics, singer_name, category_name, upload_time, play_volume, download
         from ((song left join singer on song.singer_id=singer.singer_id)
@@ -67,5 +77,37 @@
     <select id="getSongCount" resultType="int">
         select count(*)
         from song
+    </select>
+
+    <select id="getMyList" resultMap="songListResult">
+        select song.song_id, song_name, song_document, lyrics, singer_name, category_name
+        from (song left join singer on song.singer_id=singer.singer_id)
+        left join category on song.category_id=category.category_id
+        where song.song_id in (
+          select song_id
+          from song_list
+          where user_id=#{userId}
+        )
+    </select>
+
+    <select id="getSongName" resultType="string">
+        select song_name
+        from song
+        where song_id=#{songId}
+    </select>
+
+    <insert id="addToList" >
+        insert into song_list(user_id, song_id, song_name)
+        values(#{userId}, #{songId}, #{songName})
+    </insert>
+
+    <select id="queryListSongAddress" resultType="string">
+        select song_document
+        from song
+        where song_id in (
+          select song_id
+          from song_list
+          where user_id=#{userId}
+        )
     </select>
 </mapper>

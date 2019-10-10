@@ -24,6 +24,7 @@ $(document).ready(function() {
 
                 });
 
+                //添加点击事件，每个都要添加，否则会失效
                 $(".replyA").click(function (e) {
                     reply(e);
                 });
@@ -41,12 +42,13 @@ $(document).ready(function() {
 
     function reply(e) {
         // alert("值" + $(e.target).prev().prev().text());
-        //获取上一个元素的文本内容，也就是将要回复的用户名
+        //获取上一个元素的文本内容，也就是将要回复的用户名（回复谁）
         var userName = $(e.target).prev().prev().text();
         if(userName == '')
             userName = $(e.target).prev().text();
         var replyContent = prompt("回复" + userName + "：");
-        var replyUserName = "珍珠奶茶";
+        //谁回复
+        var replyUserName = $("#replyName").val();
         var commentsId = $("#commentsId").val();
 
         if(replyContent == null || replyContent == '')

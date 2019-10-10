@@ -19,7 +19,12 @@
     width: 15%;
     height: 100%;
     float: left;
+    text-align: center;
     border: #8d8d8d solid 1px;
+}
+
+.navigateText {
+    text-align: center;
 }
 
 .firstMainDiv {
