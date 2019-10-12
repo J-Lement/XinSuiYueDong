@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.music.dao.commentDao.CommentDao">
+    <resultMap id="commentsResult" type="com.nchu.music.bean.Comments">
+        <id property="commentsId" column="comments_id" />
+        <result property="songId" column="song_id" />
+        <result property="songName" column="song_name" />
+        <result property="userName" column="user_name"/>
+        <result property="userId" column="user_id" />
+        <result property="commentsContent" column="comments_content"/>
+        <result property="commentsTime" column="comments_time"/>
+    </resultMap>
+
+    <resultMap id="commentsSet" type="com.nchu.music.bean.Comments">
+        <id property="commentsId" column="comments_id" />
+        <result property="userName" column="user_name"/>
+        <result property="userId" column="user_id" />
+        <result property="commentsContent" column="comments_content"/>
+        <result property="commentsTime" column="comments_time"/>
+    </resultMap>
+
+    <resultMap id="replyResult" type="com.nchu.music.bean.Reply">
+        <id property="replyId" column="reply_id" />
+        <result property="commentsId" column="comment_id" />
+        <result property="userName" column="user_name"/>
+        <result property="userId" column="user_id" />
+        <result property="replyUserId" column="reply_user_id" />
+        <result property="replyUserName" column="reply_user_name"/>
+        <result property="replyContent" column="reply_content"/>
+        <result property="replyTime" column="reply_time"/>
+    </resultMap>
+
+    <select id="queryUserIdByUserName" resultType="int">
+        select user_id
+        from music_user
+        where user_name=#{userName}
+    </select>
+
+    <select id="queryCountCommentBySongId" resultType="integer">
+        select count(*)
+        from comments
+        where song_id=#{songId}
+    </select>
+
+    <insert id="addComment">
+        insert into comments(song_id, user_id, comments_content, comments_time)
+        value(#{songId}, #{userId}, #{commentsContent}, #{commentsTime})
+    </insert>
+
+    <select id="queryCommentBySongId" resultMap="commentsResult">
+        select comments.song_id, comments.user_id, comments_id, comments_content, comments_time, song_name, user_name
+        from comments, song, music_user
+        where comments.song_id=#{songId} and comments.song_id=song.song_id and comments.user_id=music_user.user_id
+        order by comments_time desc
+        limit #{startNum},#{pageNum}
+    </select>
+
+    <select id="queryCommentsByCommentsId" resultMap="commentsSet">
+        select *
+        from comments
+        where comments_id=#{commentsId}
+    </select>
+
+    <insert id="addReply">
+        insert into reply(comment_id, user_id, reply_user_id, reply_content, reply_time)
+        value(#{commentsId}, #{userId}, #{replyUserId}, #{replyContent}, #{replyTime})
+    </insert>
+
+    <select id="queryReplyByCommentsId" resultMap="replyResult">
+        select reply_id, comment_id, reply.user_id, reply_user_id, reply_content, reply_time, a.user_name user_name, b.user_name reply_user_name
+        from (reply left join music_user a on reply.user_id=a.user_id)
+         left join music_user b on reply_user_id=b.user_id
+         where comment_id=#{commentsId}
+         order by reply_time desc
+    </select>
+
+    <select id="queryLatestReply" resultMap="replyResult">
+        select reply_id, comment_id, reply.user_id, reply_user_id, reply_content, reply_time, a.user_name user_name, b.user_name reply_user_name
+        from (reply left join music_user a on reply.user_id=a.user_id)
+         left join music_user b on reply_user_id=b.user_id
+         where comment_id=#{commentsId}
+         order by reply_time desc
+         limit 1
+    </select>
+</mapper>

@@ -7,14 +7,14 @@ package com.nchu.music.bean;
  * @Date 2019/9/12 15:19
  */
 public class Category {
-    private int categoryId;
+    private Integer categoryId;
     private String categoryName;
 
-    public int getCategoryId() {
+    public Integer getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(int categoryId) {
+    public void setCategoryId(Integer categoryId) {
         this.categoryId = categoryId;
     }
 

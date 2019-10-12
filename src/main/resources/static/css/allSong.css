@@ -1,0 +1,63 @@
+.body{
+    width:100%;
+    min-height:100%;
+    position:relative;
+}
+
+#audio{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+}
+
+.topMainDiv {
+    height: 93%;
+    margin-bottom: 5%;
+}
+
+.firstLeftDiv {
+    width: 15%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    border: #8d8d8d solid 1px;
+}
+
+.navigateText {
+    text-align: center;
+}
+
+.firstMainDiv {
+    width: 85%;
+    height: 100%;
+    float: left;
+    /*border: #d9534f solid 1px;*/
+}
+
+.orderByWhat {
+    margin-right: 2%;
+    margin-top: 2%;
+    /*border: #d9534f solid 1px;*/
+}
+
+.floatRight {
+    float: right;
+}
+
+.querySong {
+    width: 50%;
+}
+
+.songTable {
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.commentPages {
+    float: right;
+    margin-right: 3%;
+    margin-bottom: 5%;
+}
+

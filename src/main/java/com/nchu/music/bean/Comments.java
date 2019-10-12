@@ -10,17 +10,43 @@ import java.util.Date;
  * @Date 2019/9/12 15:20
  */
 public class Comments {
-    private int commentsId;
+    private Integer commentsId;
     private String commentsContent;
     private String commentsTime;
-    private int songId;
-    private int userId;
+    private Integer songId;
+    private Integer userId;
+    private String songName;
+    private String userName;
 
-    public int getCommentsId() {
+    public String getCommentsTime() {
+        return commentsTime;
+    }
+
+    public void setCommentsTime(String commentsTime) {
+        this.commentsTime = commentsTime;
+    }
+
+    public String getSongName() {
+        return songName;
+    }
+
+    public void setSongName(String songName) {
+        this.songName = songName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Integer getCommentsId() {
         return commentsId;
     }
 
-    public void setCommentsId(int commentId) {
+    public void setCommentsId(Integer commentId) {
         this.commentsId = commentId;
     }
 
@@ -28,7 +54,7 @@ public class Comments {
         return commentsContent;
     }
 
-    public void setCommentContent(String commentContent) {
+    public void setCommentsContent(String commentContent) {
         this.commentsContent = commentContent;
     }
 
@@ -37,23 +63,23 @@ public class Comments {
     }
 
     public void setCommentTime(Date commentTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.commentsTime = sdf.format(commentTime);
     }
 
-    public int getSongId() {
+    public Integer getSongId() {
         return songId;
     }
 
-    public void setSongId(int songId) {
+    public void setSongId(Integer songId) {
         this.songId = songId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }

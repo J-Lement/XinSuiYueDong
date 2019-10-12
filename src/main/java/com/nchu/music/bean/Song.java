@@ -10,21 +10,59 @@ import java.util.Date;
  * @Date 2019/9/12 15:06
  */
 public class Song {
-    private int songId;
+    private Integer songId;
+    private Integer singerId;
+    private Integer categoryId;
     private String songName;
-    private int singerId;
+    private String singerName;
     private String songDocument;
     private String lyrics;
-    private String categoryId;
+    private String categoryName;
     private String uploadTime;
-    private int playVolume;
-    private int download;
+    private Integer playVolume;
+    private Integer download;
 
-    public int getSongId() {
+    public Integer getSingerId() {
+        return singerId;
+    }
+
+    public void setSingerId(Integer singerId) {
+        this.singerId = singerId;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public void setUploadTime(String uploadTime) {
+        this.uploadTime = uploadTime;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
+    public String getSingerName() {
+        return singerName;
+    }
+
+    public void setSingerName(String singerName) {
+        this.singerName = singerName;
+    }
+
+    public Integer getSongId() {
         return songId;
     }
 
-    public void setSongId(int songId) {
+    public void setSongId(Integer songId) {
         this.songId = songId;
     }
 
@@ -34,14 +72,6 @@ public class Song {
 
     public void setSongName(String songName) {
         this.songName = songName;
-    }
-
-    public int getSingerId() {
-        return singerId;
-    }
-
-    public void setSingerId(int singerId) {
-        this.singerId = singerId;
     }
 
     public String getSongDocument() {
@@ -60,36 +90,28 @@ public class Song {
         this.lyrics = lyrics;
     }
 
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public String getUploadTime() {
         return uploadTime;
     }
 
     public void setUploadTime(Date uploadTime) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         this.uploadTime = sdf.format(uploadTime);
     }
 
-    public int getPlayVolume() {
+    public Integer getPlayVolume() {
         return playVolume;
     }
 
-    public void setPlayVolume(int playVolume) {
+    public void setPlayVolume(Integer playVolume) {
         this.playVolume = playVolume;
     }
 
-    public int getDownload() {
+    public Integer getDownload() {
         return download;
     }
 
-    public void setDownload(int download) {
+    public void setDownload(Integer download) {
         this.download = download;
     }
 }

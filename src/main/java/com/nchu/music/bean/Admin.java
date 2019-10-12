@@ -9,9 +9,13 @@ package com.nchu.music.bean;
 public class Admin {
     private int adminId;
     private String adminName;
-    private String password;
+    private String adminPassword;
     private String adminEmail;
     private String adminPhone;
+    private int adminStatus;
+
+    public Admin() {
+    }
 
     public int getAdminId() {
         return adminId;
@@ -29,14 +33,6 @@ public class Admin {
         this.adminName = adminName;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getAdminEmail() {
         return adminEmail;
     }
@@ -51,5 +47,21 @@ public class Admin {
 
     public void setAdminPhone(String adminPhone) {
         this.adminPhone = adminPhone;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
+    }
+
+    public int getAdminStatus() {
+        return adminStatus;
+    }
+
+    public void setAdminStatus(int adminStatus) {
+        this.adminStatus = adminStatus;
     }
 }

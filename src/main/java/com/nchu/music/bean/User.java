@@ -7,23 +7,32 @@ package com.nchu.music.bean;
  * @Date 2019/9/2 18:26
  */
 public class User {
-    private int userId;
+    private Integer userId;
     private String userName;
-    private int password;
-    private String userEmial;
-    private int userPhone;
+    private String password;
+    private String email;
+    private String phone;
     private String realName;
     private String nation;
     private String province;
     private String city;
-    private int qq;
-    private int isPublic;
+    private String qq;
+    private Integer isPublic;
+    private Integer status;
 
-    public int getUserId() {
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -35,28 +44,28 @@ public class User {
         this.userName = userName;
     }
 
-    public int getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getUserEmial() {
-        return userEmial;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserEmial(String userEmial) {
-        this.userEmial = userEmial;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public int getUserPhone() {
-        return userPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setUserPhone(int userPhone) {
-        this.userPhone = userPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRealName() {
@@ -91,19 +100,19 @@ public class User {
         this.city = city;
     }
 
-    public int getQq() {
+    public String getQq() {
         return qq;
     }
 
-    public void setQq(int qq) {
+    public void setQq(String qq) {
         this.qq = qq;
     }
 
-    public int getIsPublic() {
+    public Integer getIsPublic() {
         return isPublic;
     }
 
-    public void setIsPublic(int isPublic) {
+    public void setIsPublic(Integer isPublic) {
         this.isPublic = isPublic;
     }
 }
