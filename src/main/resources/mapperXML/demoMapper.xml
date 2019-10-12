@@ -2,22 +2,36 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nchu.music.dao.DemoDao">
-    <select id="queryUser"  resultType="integer">
-        select count(*)
-        from USER
-        where user_name=#{userName} and password=#{password}
+<mapper namespace="com.nchu.music.dao.songManageDao.DemoDao">
+    <resultMap id="SongResultMap" type="com.nchu.music.bean.Song">
+        <id property="songId" column="song_id"/>
+        <result property="songName" column="song_name"/>
+        <result property="singerId" column="singer_id"/>
+        <result property="categoryId" column="category_id"/>
+        <result property="songDocument" column="song_document"/>
+        <result property="lyrics" column="lyrics"/>
+    </resultMap>
+    <select id="queryAllSong"  resultType="integer" resultMap="SongResultMap">
+        select *
+        from song
     </select>
-
-    <select id="queryByName"  resultType="integer">
-        select count(*)
-        from USER
-        where user_name=#{userName}
+    <select id="findById"  resultType="integer" resultMap="SongResultMap">
+        select *
+        from song
+        WHERE song_id = #{songId}
     </select>
+    <update id="updateSong"  >
+        update  song  set song_name=#{songName},singer_id=#{singerId},category_id=#{categoryId},song_document=#{songDocument},lyrics=#{lyrics}
+        WHERE song_id = #{songId}
+    </update>
+    <delete id="deleteSong"  >
+       DELETE FROM song
+       WHERE song_id = #{songId}
+    </delete>
 
-    <insert id="insertUser">
-        insert into USER (user_name, password)
-        values(#{userName}, #{password})
+    <insert id="insertSong" >
+        insert into song(song_id, song_name, singer_id, category_id, song_document, lyrics)
+        values(#{songId},#{songName},#{singerId}, #{categoryId},#{songDocument},#{lyrics})
     </insert>
 
 </mapper>

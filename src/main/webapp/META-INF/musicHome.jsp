@@ -40,14 +40,14 @@
 <body>
 <div class="containerDiv">
     <div class="firstLeftDiv">
-
+        <input type="text" id="loginUserId" value="${loginUserId}" hidden>
     </div>
 
     <div class="firstMainDiv">
         <div class="secondTopDiv">
             <img src="/images/music1.png" >
             <div class="buttonDiv">
-                <button class="btn btn-primary btn-sm">收藏到列表</button>
+                <button class="btn btn-primary btn-sm  addToList">收藏到列表</button>
                 <input type="text" name="songId" value="${songId}" hidden>
                 <a class="btn btn-primary btn-sm addDownload" href="${song.songDocument}" download="${song.songDocument}">下载</a>
                 <input id="songAddress" type="text" value="${song.songDocument}" hidden>
@@ -74,7 +74,7 @@
                 <div class="inputComment">
                     <%--<input readonly="true"  placeholder="发表评论" style="width: 98%;margin: 7px">--%>
                     <input id="songId" type="text" name="songId" value="${songId}" hidden>
-                    <input type="text" name="userId" value="1" hidden>
+                    <input type="text" name="userId" value="${loginUserId}" hidden>
                     <input id="pageNow" type="text" name="pageNow" value="${page.pageNow}" hidden>
                     <input id="pageNum" type="text" name="pageNum" value="${page.pageNum}" hidden>
                     <textarea id="inputComment" name="content" placeholder="发表评论"  rows="5"></textarea>

@@ -11,6 +11,8 @@ import java.util.Date;
  */
 public class Song {
     private Integer songId;
+    private Integer singerId;
+    private Integer categoryId;
     private String songName;
     private String singerName;
     private String songDocument;
@@ -19,6 +21,22 @@ public class Song {
     private String uploadTime;
     private Integer playVolume;
     private Integer download;
+
+    public Integer getSingerId() {
+        return singerId;
+    }
+
+    public void setSingerId(Integer singerId) {
+        this.singerId = singerId;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
 
     public void setUploadTime(String uploadTime) {
         this.uploadTime = uploadTime;

@@ -27,13 +27,34 @@
 <body>
 <div class="topMainDiv">
     <div class="firstLeftDiv">
+        <table class="table table-striped">
+            <tbody>
+            <input type="text" id="loginUserId" value="${loginUserId}" hidden>
+                <tr><h4>用户:${loginUserName}</h4></tr>
+                <tr>
+                    <td class="navigateText">
+                        <a href="/allMusic">主页</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="navigateText">
+                        <a href="/personalpage">个人信息</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="navigateText">
+                        <a href="/myList?userId=${loginUserId}">我的列表</a>
+                    </td>
+                </tr>
 
+            </tbody>
+        </table>
     </div>
 
     <div class="firstMainDiv">
         <div class="orderByWhat">
             <div class="dropdown floatRight">
-                <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">主题
+                <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">显示方式
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
@@ -77,6 +98,7 @@
                             <a class="addDownload" href="${song.songDocument}" download="${song.songDocument}">下载</a>
                             <input id="songAddress" type="text" value="${song.songDocument}" hidden>
                             <a class="listening" href="#">试听</a>
+                            <a class="addToList" href="#">收藏</a>
                         </td>
                     </tr>
                 </c:forEach>

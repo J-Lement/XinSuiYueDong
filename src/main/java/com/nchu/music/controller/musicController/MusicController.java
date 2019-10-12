@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +40,7 @@ public class MusicController {
 
     @RequestMapping("/allMusic")
     public String allMusic(Model model){
-        ArrayList<Song> list = (ArrayList<Song>) musicService.queryAllSong();
-        model.addAttribute("allSongs",list);
+        setPage(model,2, 1);
         return "allSong";
     }
 
@@ -166,7 +166,7 @@ public class MusicController {
     private void setPage(Model model, int flag, int pageNow){
         Page page = new Page();
         page.setPageNow(pageNow);
-        page.setPageNum(4);
+        page.setPageNum(10);
         page.setTotalNum(musicService.getSongCount());
 
         List<Song> list = null;
@@ -192,5 +192,44 @@ public class MusicController {
         model.addAttribute("page", page);
         model.addAttribute("num", num);
         model.addAttribute("flag",flag);
+    }
+
+    /**
+     * @Author Lement
+     * @Description //查询用户的歌单列表
+     * @Date 11:09 2019/10/9
+     * @Param [userId, model]
+     * @return java.lang.String
+     **/
+    @RequestMapping("/myList")
+    public String myList(String userId, Model model){
+        int userId1 = Integer.parseInt(userId);
+
+        ArrayList<Song> list = (ArrayList<Song>) musicService.getMyList(userId1);
+        model.addAttribute("allSongs",list);
+        return "myList";
+    }
+
+    /**
+     * @Author Lement
+     * @Description //添加歌曲到列表中
+     * @Date 11:09 2019/10/9
+     * @Param [songId, userId]
+     * @return java.lang.String
+     **/
+    @RequestMapping("/addSongToMyList")
+    @ResponseBody
+    public String addToList(String songId, String userId){
+        int userId1 = Integer.parseInt(userId);
+        int songId1 = Integer.parseInt(songId);
+
+        return musicService.addToList(userId1, songId1) + "";
+    }
+
+    @RequestMapping("/getAllSongAddress")
+    @ResponseBody
+    public List<String> getAllSongAddress(String userId){
+        int userId1 = Integer.parseInt(userId);
+        return musicService.queryListSongAddress(userId1);
     }
 }

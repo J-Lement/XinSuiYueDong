@@ -9,15 +9,24 @@ package com.nchu.music.bean;
 public class User {
     private Integer userId;
     private String userName;
-    private Integer password;
-    private String userEmial;
-    private Integer userPhone;
+    private String password;
+    private String email;
+    private String phone;
     private String realName;
     private String nation;
     private String province;
     private String city;
-    private Integer qq;
+    private String qq;
     private Integer isPublic;
+    private Integer status;
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
     public Integer getUserId() {
         return userId;
@@ -35,28 +44,28 @@ public class User {
         this.userName = userName;
     }
 
-    public Integer getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Integer password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String getUserEmial() {
-        return userEmial;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserEmial(String userEmial) {
-        this.userEmial = userEmial;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public Integer getUserPhone() {
-        return userPhone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setUserPhone(Integer userPhone) {
-        this.userPhone = userPhone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRealName() {
@@ -91,11 +100,11 @@ public class User {
         this.city = city;
     }
 
-    public Integer getQq() {
+    public String getQq() {
         return qq;
     }
 
-    public void setQq(Integer qq) {
+    public void setQq(String qq) {
         this.qq = qq;
     }
 

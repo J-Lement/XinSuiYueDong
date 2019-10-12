@@ -55,7 +55,8 @@
                 <div class="inputComment">
                     <%--<input readonly="true"  placeholder="发表评论" style="width: 98%;margin: 7px">--%>
                     <input id="commentsId" type="text" name="commentsId" value="${comments.commentsId}" hidden>
-                    <input type="text" name="replyId" value="2" hidden>
+                    <input type="text" name="replyId" value="${loginUserId}" hidden>
+                    <input type="text" id="replyName" value="${loginUserName}" hidden>
                     <%--<input id="pageNow" type="text" name="pageNow" value="${page.pageNow}" hidden>--%>
                     <%--<input id="pageNum" type="text" name="pageNum" value="${page.pageNum}" hidden>--%>
                     <textarea id="inputComment" name="content" placeholder="发表评论"  rows="5"></textarea>
@@ -88,7 +89,6 @@
 
     </div>
 
-    <audio id='audio' controls="controls" style="width: 100%">你的浏览器不支持喔！</audio>
 </div>
 </body>
 </html>

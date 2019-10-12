@@ -27,4 +27,12 @@ public interface MusicDao {
     List<Song> queryHotestSong(int pageNow, int pageNum);
 
     int getSongCount();
+
+    List<Song> getMyList(int userId);
+
+    String getSongName(int songId);
+
+    int addToList(int userId, int songId, String songName);
+
+    List<String> queryListSongAddress(int userId);
 }

@@ -7,17 +7,21 @@ package com.nchu.music.bean;
  * @Date 2019/9/12 14:57
  */
 public class Admin {
-    private Integer adminId;
+    private int adminId;
     private String adminName;
-    private String password;
+    private String adminPassword;
     private String adminEmail;
     private String adminPhone;
+    private int adminStatus;
 
-    public Integer getAdminId() {
+    public Admin() {
+    }
+
+    public int getAdminId() {
         return adminId;
     }
 
-    public void setAdminId(Integer adminId) {
+    public void setAdminId(int adminId) {
         this.adminId = adminId;
     }
 
@@ -27,14 +31,6 @@ public class Admin {
 
     public void setAdminName(String adminName) {
         this.adminName = adminName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getAdminEmail() {
@@ -51,5 +47,21 @@ public class Admin {
 
     public void setAdminPhone(String adminPhone) {
         this.adminPhone = adminPhone;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword;
+    }
+
+    public int getAdminStatus() {
+        return adminStatus;
+    }
+
+    public void setAdminStatus(int adminStatus) {
+        this.adminStatus = adminStatus;
     }
 }

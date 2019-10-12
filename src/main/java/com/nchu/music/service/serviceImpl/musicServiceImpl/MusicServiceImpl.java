@@ -53,4 +53,25 @@ public class MusicServiceImpl implements MusicService {
     public int getSongCount() {
         return musicDao.getSongCount();
     }
+
+    @Override
+    public List<Song> getMyList(int userId) {
+        return musicDao.getMyList(userId);
+    }
+
+    @Override
+    public String getSongName(int songId) {
+        return musicDao.getSongName(songId);
+    }
+
+    @Override
+    public int addToList(int userId, int songId) {
+        String songName = getSongName(songId);
+        return musicDao.addToList(userId, songId, songName);
+    }
+
+    @Override
+    public List<String> queryListSongAddress(int userId) {
+        return musicDao.queryListSongAddress(userId);
+    }
 }

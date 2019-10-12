@@ -25,4 +25,12 @@ public interface MusicService {
     List<Song> queryHotestSong(int pageNow, int pageNum);
 
     int getSongCount();
+
+    List<Song> getMyList(int userId);
+
+    String getSongName(int songId);
+
+    int addToList(int userId, int songId);
+
+    List<String> queryListSongAddress(int userId);
 }
