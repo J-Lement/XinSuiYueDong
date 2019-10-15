@@ -25,17 +25,68 @@
 
 </head>
 <body>
-个人主页<br>
-用户名：${user.userName}<br>
-个人邮箱:${user.email}<br>
-电话号码：${user}<br>
-<hr>
-<a href="updateUser">个人信息修改</a><br>
-<a href="updatePassword">修改密码</a> <br>
-qq：${user.qq}<br>
-国家:${user.nation}<br>
-省份:${user.province}<br>
-城市:${user.city}
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-2 column"></div>
+
+        <div class="col-md-8 column">
+            <h1>个人主页</h1><br>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        个人基本信息
+                    </h2>
+                </div>
+                <div class="panel-body ">
+                    <span>用户名：</span>${user.userName}
+                </div>
+                <div class="panel-body">
+                    <span>个人邮箱:</span>${user.email}
+                </div>
+                <div class="panel-body">
+                    <span>电话号码：</span>${user.phone}
+                </div>
+                <div class="panel-footer">
+                    <a href="updatePassword">修改密码</a>
+                </div>
+            </div>
+            <hr>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">
+                        个人基本信息
+                    </h2>
+                </div>
+                <div class="panel-body">
+                    <span>qq：</span>${user.qq}
+                </div>
+                <div class="panel-body">
+                   <span> 国家:</span>${user.nation}
+                </div>
+                <div class="panel-body">
+                    <span>省份:</span>${user.province}
+                </div>
+                <div class="panel-body">
+                    <span>城市:</span>${user.city}
+                </div>
+                <div class="panel-footer">
+                    <a href="updateUser">个人信息修改</a>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-2 column"></div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
 
 </body>
 </html>

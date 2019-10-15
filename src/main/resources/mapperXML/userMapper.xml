@@ -30,4 +30,10 @@
         update  music_user set password=#{password} where email=#{email}
     </update>
 
+    <select id="queryUserById" resultType="com.nchu.music.bean.User">
+        select *
+        from music_user
+        where user_id=#{userId}
+    </select>
+
 </mapper>

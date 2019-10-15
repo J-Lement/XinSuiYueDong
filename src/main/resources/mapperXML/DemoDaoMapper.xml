@@ -11,7 +11,7 @@
         <result property="songDocument" column="song_document"/>
         <result property="lyrics" column="lyrics"/>
     </resultMap>
-    <select id="queryAllSong"  resultType="integer" resultMap="SongResultMap">
+    <select id="queryAllSong"  resultMap="SongResultMap">
         select *
         from song
     </select>
@@ -30,8 +30,8 @@
     </delete>
 
     <insert id="insertSong" >
-        insert into song(song_id, song_name, singer_id, category_id, song_document, lyrics)
-        values(#{songId},#{songName},#{singerId}, #{categoryId},#{songDocument},#{lyrics})
+        insert into song(song_name, singer_id, category_id, song_document, lyrics)
+        values(#{songName},#{singerId}, #{categoryId},#{songDocument},#{lyrics})
     </insert>
 
 </mapper>
