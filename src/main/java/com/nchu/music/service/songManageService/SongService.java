@@ -1,6 +1,7 @@
 package com.nchu.music.service.songManageService;
 
 import com.nchu.music.bean.Song;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -22,4 +23,6 @@ public interface SongService {
     int deleteSong(Integer songId);
     //查找数据
     Song findById(Integer songId);
+
+    void multiUpload(List<MultipartFile> files, Song song);
 }
