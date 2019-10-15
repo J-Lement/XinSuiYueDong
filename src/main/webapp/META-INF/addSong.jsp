@@ -28,19 +28,15 @@
         <h3>添加歌曲</h3>
     </div><!--contenttitle-->
 
-    <form class="stdform"  action="add_do_song" method="post">
+    <form class="stdform"  action="/multiUpload" method="post" enctype="multipart/form-data">
 
-        <p>
-            <label>歌曲id：</label>
-            <span class="field"><input type="text" name="songId" class="smallinput"/></span>
-        </p>
         <p>
             <label>歌曲名字：</label>
             <span class="field"><input type="text" name="songName" class="smallinput" /></span>
         </p>
         <p>
             <label>歌手id：</label>
-            <span class="field"><input type="text" name="singId" class="smallinput" /></span>
+            <span class="field"><input type="text" name="singerId" class="smallinput" /></span>
         </p>
 
 
@@ -52,11 +48,11 @@
 
         <p>
             <label>歌曲文件地址：</label>
-            <span class="field"><input type="text" name="songDocument" class="smallinput" /></span>
+            <span class="field"><input type="file" name="files" class="smallinput" /></span>
         </p>
         <p>
             <label>歌词文件地址：</label>
-            <span class="field"><input type="text" name="lyrics" class="smallinput" /></span>
+            <span class="field"><input type="file" name="files" class="smallinput" /></span>
         </p>
 
         <p class="stdformbutton">

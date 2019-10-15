@@ -19,4 +19,6 @@ public interface UserService {
 
     public int updatePasswordByEmail(User user);
 
+    User queryUserById(int userId);
+
 }

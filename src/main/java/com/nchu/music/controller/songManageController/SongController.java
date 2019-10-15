@@ -9,9 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
+import org.springframework.util.ClassUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +26,7 @@ public class SongController {
     SongService songService;
     @RequestMapping ("/list")
     public    String  listSong (Model model){
-         List<Song> list  = new ArrayList<> ();
-         list= songService.queryAllSong ();
+         List<Song> list = songService.queryAllSong ();
         //System.out.println ("first:" + list.size ());
          model.addAttribute ("list",list);
         return  "songList";
@@ -31,9 +34,7 @@ public class SongController {
     }
 
     @RequestMapping ("/index")
-    public    String  addMusic (){
-
-
+    public String addMusic (){
 
         return "song_index" ;
     }
@@ -41,29 +42,21 @@ public class SongController {
    //添加歌曲
     @GetMapping("/add_song")
     public String addSong(Model model){
-        //Collection<Major> list = ms.findALl();
-        List<Song> list =songService.queryAllSong ();
-
-        model.addAttribute("list",list);
         return "addSong";
     }
-    @PostMapping("/add_do_song")
-    public String addTeacher(Song song, Integer songId, BindingResult result, Model model){
+
+    @RequestMapping("/multiUpload")
+    public String multiUpload(List<MultipartFile> files, Song song, BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             List<Song> list =songService.queryAllSong ();
             model.addAttribute("list",list);
             return "addSong";
         } else {
-            Song song1 =songService.findById (songId);
-            song.setSongId (songId);
-            songService.insertSong (song);
+            songService.multiUpload(files, song);
             return "redirect:/list";
         }
     }
-
-
-
 
 
 //修改歌曲信息

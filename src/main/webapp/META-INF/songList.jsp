@@ -40,11 +40,9 @@
             <td>${list.singerId}</td>
             <td>${list.categoryId}</td>
             <td>${list.songDocument}
-                <a href="/edit/${list.songId}"><button class="stdbtn btn_blue">歌词上传</button></a>
-
             </td>
-            <td>${list.lyrics}</td>
-
+            <td>${list.lyrics}
+                <a href="/edit/${list.songId}"><button class="stdbtn btn_blue">歌词上传</button></a></td>
             <td>
                 <a href="/edit/${list.songId}"><button class="stdbtn btn_blue">修改</button></a>
                 <a href="/deletesong/${list.songId}"><button class="stdbtn btn_blue"  type="submit">删除</button></a>

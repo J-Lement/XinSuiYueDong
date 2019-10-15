@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="navigateText">
-                        <a href="/personalpage">个人信息</a>
+                        <a href="/personalpage?loginUserId=${loginUserId}" target="_blank">个人信息</a>
                     </td>
                 </tr>
                 <tr>
