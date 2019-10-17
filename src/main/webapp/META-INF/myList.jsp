@@ -46,6 +46,11 @@
                     <a href="/myList?userId=${loginUserId}">我的列表</a>
                 </td>
             </tr>
+            <tr>
+                <td class="navigateText">
+                    <a href="/loginOut?userId=${loginUserId}">退出</a>
+                </td>
+            </tr>
 
             </tbody>
         </table>
@@ -57,11 +62,6 @@
                 <button type="button" class="btn btn-primary" id="playAll">播放全部
                 </button>
             </div>
-
-            <form action="/querySongByName">
-                <input type="text" id="querySong" name="querySong" value="${querySong}" placeholder="输入歌名">
-                <button class="btn btn-info" type="submit" value="提交">查询</button>
-            </form>
         </div>
 
         <div class="songTable">
@@ -85,6 +85,7 @@
                             <a class="addDownload" href="${song.songDocument}" download="${song.songDocument}">下载</a>
                             <input id="songAddress" type="text" value="${song.songDocument}" hidden>
                             <a class="listening" href="#">试听</a>
+                            <a href="/deleteSongFromList?userId=${loginUserId}&songId=${song.songId}">移除</a>
                         </td>
                     </tr>
                 </c:forEach>

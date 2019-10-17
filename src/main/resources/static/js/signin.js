@@ -6,7 +6,7 @@ $().ready(function() {
         rules: {
             username: {
                 required: true,
-                minlength: 6,
+                minlength: 3,
                 maxlength:16,
                 remote:{
                     type: "get",

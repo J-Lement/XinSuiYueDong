@@ -35,4 +35,6 @@ public interface MusicDao {
     int addToList(int userId, int songId, String songName);
 
     List<String> queryListSongAddress(int userId);
+
+    int deleteSongFromList(int userId, int songId);
 }

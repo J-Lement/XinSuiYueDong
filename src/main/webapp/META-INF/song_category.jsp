@@ -25,7 +25,7 @@
 
             <th class="head1">类别id</th>
             <th class="head1">类别名</th>
-            <th class="head0">操做</th>
+            <th class="head0">操作</th>
         </tr>
         </thead>
 

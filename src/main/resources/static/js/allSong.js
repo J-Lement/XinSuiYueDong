@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    var audio = $("audio")[0];//要在后面加[0]，否则获取不到
+    //要在后面加[0]，否则获取不到
+    var audio = $("audio")[0];
     // audio.src = "/music/song/李荣浩 - 老街.mp3";
 
     //js比较是严格比较，类型要一致才行

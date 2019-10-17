@@ -31,10 +31,14 @@ public class LoginController {
     @ResponseBody
     public String login(String username, String password,HttpServletRequest request){
         User user = LoginDao.login(username,password);
+        if(username.equals("admin"))
+            return "<script>alert('登录成功');" +
+                    "window.location.href='/index'</script>";//跳传到管理员界面
         if(user==null||user.getStatus()==0){
             return "<script>alert('登录失败');" +
                     "window.history.back(-1)</script>" ;
         }
+
         HttpSession session = request.getSession();
         session.setAttribute("loginUserId",user.getUserId());
         session.setAttribute("loginUserName",user.getUserName());
@@ -50,6 +54,10 @@ public class LoginController {
         return "personalpage";
     }
 
+    @RequestMapping("/loginOut")
+    public String loginOut(){
+        return "login";
+    }
 
 
 

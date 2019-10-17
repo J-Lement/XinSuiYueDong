@@ -22,7 +22,7 @@
     <!--头部开始-->
     <div class="top_c">
         <div class="top-title"><h1>心随乐动</h1></div>
-        <div class="top-nav">欢迎您，&nbsp;&nbsp;<a href="#">修改密码</a> | <a href="#">安全退出</a></div>
+        <div class="top-nav">欢迎您&nbsp;&nbsp;| <a href="/loginOut">安全退出</a></div>
     </div>
     <!--头部结束-->
     <!--左边菜单开始-->
@@ -44,9 +44,12 @@
                     <li><b class="tip"></b><a role = "button"target="Conframe" href="/add_category">类别添加</a></li>
                 </ul>
             </div>
-
-
-
+            <div>
+                <a class="one">歌手管理</a>
+                <ul class="kid">
+                    <li><b class="tip"></b><a role = "button"target="Conframe" href="/showsinger">歌手信息</a></li>
+                </ul>
+            </div>
 
         </div>
 

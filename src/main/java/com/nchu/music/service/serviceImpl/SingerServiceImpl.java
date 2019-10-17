@@ -26,6 +26,6 @@ public class SingerServiceImpl implements SingerService {
 
     @Override
     public int insertSinger(Singer singer) {
-        return singerDao.insertSinger(singer);
+        return singerDao.insertSinger(singer.getSingerName());
     }
 }

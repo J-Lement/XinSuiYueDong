@@ -9,6 +9,7 @@ import com.nchu.music.service.musicService.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -231,5 +232,16 @@ public class MusicController {
     public List<String> getAllSongAddress(String userId){
         int userId1 = Integer.parseInt(userId);
         return musicService.queryListSongAddress(userId1);
+    }
+
+    @RequestMapping("/deleteSongFromList")
+    public String deleteSongFromList(String userId, String songId, Model model){
+        int userId1 = Integer.parseInt(userId);
+        int songId1 = Integer.parseInt(songId);
+
+        musicService.deleteSongFromList(userId1, songId1);
+        ArrayList<Song> list = (ArrayList<Song>) musicService.getMyList(userId1);
+        model.addAttribute("allSongs",list);
+        return "myList";
     }
 }

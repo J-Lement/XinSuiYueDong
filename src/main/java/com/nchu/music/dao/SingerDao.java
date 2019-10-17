@@ -14,7 +14,7 @@ public interface SingerDao {
 
     public int deleteSingerByName(String name);
 
-    public int insertSinger(Singer singer);
+    public int insertSinger(String singerName);
 
 
 }

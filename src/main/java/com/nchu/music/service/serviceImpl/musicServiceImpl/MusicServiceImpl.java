@@ -74,4 +74,9 @@ public class MusicServiceImpl implements MusicService {
     public List<String> queryListSongAddress(int userId) {
         return musicDao.queryListSongAddress(userId);
     }
+
+    @Override
+    public int deleteSongFromList(int userId, int songId) {
+        return musicDao.deleteSongFromList(userId, songId);
+    }
 }
