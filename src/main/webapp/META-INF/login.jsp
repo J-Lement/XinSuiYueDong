@@ -6,7 +6,7 @@
     <title>登录页面</title>
 
     <!--添加图标-->
-    <link rel="shortcut icon" href="/static/images/logo.ico" />
+    <link rel="shortcut icon" href="/images/logo.ico" />
 
     <!-- Vue.js文件-->
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>

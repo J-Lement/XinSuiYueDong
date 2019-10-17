@@ -31,15 +31,9 @@
     <form class="stdform"  action="/add_do_category" method="post">
 
         <p>
-            <label>歌曲类别id：</label>
-            <span class="field"><input type="text" name="categoryId" class="smallinput"/></span>
-        </p>
-        <p>
             <label>类别名字：</label>
             <span class="field"><input type="text" name="categoryName" class="smallinput" /></span>
         </p>
-
-
 
         <p class="stdformbutton">
             <button class="submit ">提交</button>

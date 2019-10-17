@@ -110,4 +110,9 @@
           where user_id=#{userId}
         )
     </select>
+
+    <delete id="deleteSongFromList">
+        delete from song_list
+        where song_id=#{songId} and user_id=#{userId}
+    </delete>
 </mapper>

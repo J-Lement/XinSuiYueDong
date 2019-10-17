@@ -33,4 +33,6 @@ public interface MusicService {
     int addToList(int userId, int songId);
 
     List<String> queryListSongAddress(int userId);
+
+    int deleteSongFromList(int userId, int songId);
 }

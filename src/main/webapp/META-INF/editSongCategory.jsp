@@ -29,11 +29,6 @@
     </div>
 
     <form class="stdform"  action="/editcategory_do" method="post">
-
-        <p>
-            <label>歌曲类别id：</label>
-            <span class="field"><input type="text" name="categoryId" class="smallinput" value="${category.categoryId}"/></span>
-        </p>
         <p>
             <label>类别名称：</label>
             <span class="field"><input type="text" name="categoryName" class="smallinput" value="${category.categoryName}" /></span>

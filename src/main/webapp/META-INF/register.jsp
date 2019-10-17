@@ -6,9 +6,9 @@
     <title>注册页面</title>
 
     <!--添加图标-->
-    <link rel="shortcut icon" href="/static/images/logo.ico" />
+    <link rel="shortcut icon" href="/images/logo.ico" />
 
-    <link rel="stylesheet" type="text/css" href="/static/css/register.css">
+    <link rel="stylesheet" type="text/css" href="/css/register.css">
 
 
 
@@ -28,7 +28,7 @@
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
     <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
-    <script type="application/javascript" src="/static/js/signin.js"></script>
+    <script type="application/javascript" src="/js/signin.js"></script>
 </head>
 <body>
 
@@ -93,5 +93,5 @@
 
 
 </body>
-<script type="application/javascript" src="/static/js/check.js"></script>
+<script type="application/javascript" src="/js/check.js"></script>
 </html>

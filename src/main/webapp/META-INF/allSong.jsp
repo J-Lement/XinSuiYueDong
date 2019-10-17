@@ -46,6 +46,11 @@
                         <a href="/myList?userId=${loginUserId}">我的列表</a>
                     </td>
                 </tr>
+                <tr>
+                    <td class="navigateText">
+                        <a href="/loginOut?userId=${loginUserId}">退出</a>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

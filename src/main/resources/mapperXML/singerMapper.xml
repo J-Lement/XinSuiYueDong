@@ -13,7 +13,7 @@
     </select>
 
     <insert id="insertSinger" parameterType="com.nchu.music.bean.Singer">
-        insert into singer values (singer_id,#{singerName})
+        insert into singer(singer_name) values (#{singerName})
     </insert>
 
 
