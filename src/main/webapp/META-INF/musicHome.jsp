@@ -45,7 +45,7 @@
 
     <div class="firstMainDiv">
         <div class="secondTopDiv">
-            <img src="/images/music1.png" >
+            <img class="imgMusic imgRotate" src="/images/music.png">
             <div class="buttonDiv">
                 <button class="btn btn-primary btn-sm  addToList">收藏到列表</button>
                 <input type="text" name="songId" value="${songId}" hidden>
@@ -92,6 +92,9 @@
                         <div>
                             <a href="#" style="color: #00bbee">${comments.userName}：</a>
                             ${comments.commentsContent}
+                            <p style="float: right"><c:if test="${comments.commentsZan != null && comments.commentsZan != 0}">(${comments.commentsZan})</c:if></p>
+                            <img class="imgZan" src="/images/zan.png">
+                            <input type="text" name="commentsId" value="${comments.commentsId}" hidden>
                             <a class="replyA" href="/replyHome?commentsId=${comments.commentsId}&userName=${comments.userName}" target="_blank">回复</a>
                             <span class="floatRight">${comments.commentsTime}</span>
                         </div>

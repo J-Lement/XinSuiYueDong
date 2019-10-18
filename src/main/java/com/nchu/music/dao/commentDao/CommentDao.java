@@ -30,4 +30,10 @@ public interface CommentDao {
     List<Reply> queryReplyByCommentsId(int commentsId);
 
     Reply queryLatestReply(int commentsId);
+
+    Integer queryCommentsZan(int commentsId);
+
+    int addOneZan(int commentsId);
+
+    int minusOneZan(int commentsId);
 }

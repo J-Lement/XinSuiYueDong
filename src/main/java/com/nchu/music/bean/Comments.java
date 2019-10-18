@@ -17,6 +17,15 @@ public class Comments {
     private Integer userId;
     private String songName;
     private String userName;
+    private Integer commentsZan;
+
+    public Integer getCommentsZan() {
+        return commentsZan;
+    }
+
+    public void setCommentsZan(Integer commentsZan) {
+        this.commentsZan = commentsZan;
+    }
 
     public String getCommentsTime() {
         return commentsTime;

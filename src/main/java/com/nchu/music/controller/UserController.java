@@ -47,23 +47,23 @@ public class UserController {
         if(userService.updateUserById(user)>0) {
             request.getSession().setAttribute("user",user);
             return "<script>alert('修改成功');" +
-                    "window.location.href='/personalpage'</script>";
+                    "window.location.href='/personalpage?loginUserId=" + user.getUserId() + "'</script>";
         }
         else
             return "<script>alert('修改失败');" +
-                    "window.location.href='/personalpage'</script>";
+                    "window.location.href='/personalpageloginUserId=" + user.getUserId() + "'</script>";
 
 
 
     }
 
     @GetMapping("updatePassword")
-    public String updatePassword(@SessionAttribute User user){
-        new Thread(new PasswordEditEmail(user.getEmail())).start();
+    public String updatePassword(String email){
+        new Thread(new PasswordEditEmail(email)).start();
         return "redirect:personalpage";
     }
 
-    @GetMapping("editpassword")
+    @GetMapping("editPassword")
     public String editpassword(String email, Model model){
         model.addAttribute("email",email);
         return "edit";

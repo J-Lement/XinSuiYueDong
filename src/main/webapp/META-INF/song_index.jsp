@@ -32,7 +32,7 @@
             <div>
                 <a class="one">歌曲管理</a>
                 <ul class="kid">
-                    <li><b class="tip"></b><a role = "button"target="Conframe" href="/list">歌手信息查询</a></li>
+                    <li><b class="tip"></b><a role = "button"target="Conframe" href="/list">歌曲信息查询</a></li>
                     <li><b class="tip"></b><a role = "button" target="Conframe" href="/add_song">增加歌曲</a></li>
                 </ul>
             </div>

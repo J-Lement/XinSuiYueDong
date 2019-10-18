@@ -165,9 +165,19 @@ $(document).ready(function() {
                     console.log("i:" + i + " songName:" + obj.commentsId + " userName:" + obj.userName);
                     var html = "<div>";
                     html = html + "<a href='#' style='color: #00bbee'>" + obj.userName + ":</a>";
-                    html = html + obj.commentsContent + "<a class='replyA' target='_blank' href='/replyHome?commentsId="+ obj.commentsId + "&userName=" + obj.userName + "'>回复</a>";
+                    html = html + obj.commentsContent + "<p style='float: right'>";
+                    if(obj.commentsZan != null && obj.commentsZan != 0)
+                        html = html + "(" + obj.commentsZan + ")";
+                    html = html + "</p><img class='imgZan' src='/images/zan.png'>";
+                    html = html + "<input type='text' name='commentsId' value='"+obj.commentsId+"' hidden>";
+                    html = html + "<a class='replyA' target='_blank' href='/replyHome?commentsId="+ obj.commentsId + "&userName=" + obj.userName + "'>回复</a>";
                     html = html + "<span class='floatRight'>" + obj.commentsTime + "</span></div>";
                     $(".comment").append(html);
+                });
+
+                //添加点击事件
+                $(".imgZan").click(function (e) {
+                    imgZanClick(e);
                 });
             },
             error: function () {
@@ -220,4 +230,63 @@ $(document).ready(function() {
             }
         });
     });
+
+
+    $(".imgZan").click(function (e) {
+        imgZanClick(e);
+    });
+
+    var num = 0;
+    //点赞或取消点赞方法
+    function imgZanClick(e) {
+        var imgSrc = $(e.target)[0].src;
+        num ++;
+        console.log(num + "," + imgSrc);
+        var commentsId = $(e.target).next().val();
+        console.log("commentsId:" + commentsId);
+        if(imgSrc == "http://localhost:8080/images/zan.png"){
+            $(e.target)[0].src = "/images/redZan.png";
+
+            $.ajax({
+                async: false,//异步
+                type: "get",//发送方式
+                url: "/addOneZan",//发送的地址
+                data: {
+                    "commentsId":commentsId
+                },
+                datatype: "json",//接收的数据
+                success: function (data) {
+                    $(e.target).siblings("p").empty();
+                    $(e.target).siblings("p").text("(" + data + ")");
+                    // alert("点赞加一:" + data);
+                },
+                error: function () {
+                    alert("发送失败。。。");
+                }
+            });
+        }
+        else {
+            $(e.target)[0].src = "/images/zan.png";
+
+            $.ajax({
+                async: false,//异步
+                type: "get",//发送方式
+                url: "/minusOneZan",//发送的地址
+                data: {
+                    "commentsId":commentsId
+                },
+                datatype: "json",//接收的数据
+                success: function (data) {
+                    $(e.target).siblings("p").empty();
+                    $(e.target).siblings("p").text("(" + data + ")");
+                    // alert("取消点赞:" + data);
+                },
+                error: function () {
+                    alert("发送失败。。。");
+                }
+            });
+        }
+
+    }
+
 });

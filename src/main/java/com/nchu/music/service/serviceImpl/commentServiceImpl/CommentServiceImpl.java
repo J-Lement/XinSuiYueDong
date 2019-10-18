@@ -72,4 +72,19 @@ public class CommentServiceImpl implements CommentService {
     public Reply queryLatestReply(int commentsId) {
         return commentDao.queryLatestReply(commentsId);
     }
+
+    @Override
+    public Integer queryCommentsZan(int commentsId) {
+        return commentDao.queryCommentsZan(commentsId);
+    }
+
+    @Override
+    public int addOneZan(int commentsId) {
+        return commentDao.addOneZan(commentsId);
+    }
+
+    @Override
+    public int minusOneZan(int commentsId) {
+        return commentDao.minusOneZan(commentsId);
+    }
 }

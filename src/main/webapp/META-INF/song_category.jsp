@@ -17,7 +17,7 @@
 <body>
 <div>
     <div class="contenttitle2">
-        <h3>课题列表</h3>
+        <h3>类别列表</h3>
     </div><!--contenttitle-->
     <table cellpadding="0" cellspacing="0" border="0" class="stdtable" id="dyntable">
         <thead>
