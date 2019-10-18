@@ -11,6 +11,7 @@
         <result property="userId" column="user_id" />
         <result property="commentsContent" column="comments_content"/>
         <result property="commentsTime" column="comments_time"/>
+        <result property="commentsZan" column="comments_zan"/>
     </resultMap>
 
     <resultMap id="commentsSet" type="com.nchu.music.bean.Comments">
@@ -45,12 +46,12 @@
     </select>
 
     <insert id="addComment">
-        insert into comments(song_id, user_id, comments_content, comments_time)
-        value(#{songId}, #{userId}, #{commentsContent}, #{commentsTime})
+        insert into comments(song_id, user_id, comments_content, comments_time, comments_zan)
+        value(#{songId}, #{userId}, #{commentsContent}, #{commentsTime}, 0)
     </insert>
 
     <select id="queryCommentBySongId" resultMap="commentsResult">
-        select comments.song_id, comments.user_id, comments_id, comments_content, comments_time, song_name, user_name
+        select comments.song_id, comments.user_id, comments_id, comments_content, comments_time, comments_zan, song_name, user_name
         from comments, song, music_user
         where comments.song_id=#{songId} and comments.song_id=song.song_id and comments.user_id=music_user.user_id
         order by comments_time desc
@@ -84,4 +85,24 @@
          order by reply_time desc
          limit 1
     </select>
+
+    <select id="queryCommentsZan" resultType="integer">
+        select comments_zan
+        from comments
+        where comments_id=#{commentsId}
+    </select>
+
+    <update id="addOneZan">
+        update comments
+        set comments_zan=comments_zan + 1
+        where comments_id=#{commentsId}
+    </update>
+    
+    <update id="minusOneZan">
+        update comments
+        set comments_zan=comments_zan - 1
+        where comments_id=#{commentsId}
+    </update>
+
+
 </mapper>

@@ -134,7 +134,7 @@ public class CommentController {
 
     /**
      * @Author Lement
-     * @Description //添加一条二级回复，然后根据评论id返回最新的回复
+     * @Description //添加一条二级回复，然后根据评论id返回最新的一条回复
      * @Date 10:21 2019/9/27
      * @Param [commentsId, userName, replyUserName, replyContent]
      * @return com.nchu.music.bean.Reply
@@ -147,4 +147,37 @@ public class CommentController {
 
         return commentService.queryLatestReply(Integer.parseInt(commentsId));
     }
+
+    /**
+     * @Author Lement
+     * @Description //点赞一次
+     * @Date 19:13 2019/10/17
+     * @Param [commentsId]
+     * @return int
+     **/
+    @RequestMapping("/addOneZan")
+    @ResponseBody
+    public int addOneZan(String commentsId){
+        int commentsId1 = Integer.parseInt(commentsId);
+
+        commentService.addOneZan(commentsId1);
+        return commentService.queryCommentsZan(commentsId1);
+    }
+
+    /**
+     * @Author Lement
+     * @Description //取消点赞
+     * @Date 19:14 2019/10/17
+     * @Param [commentsId]
+     * @return int
+     **/
+    @RequestMapping("/minusOneZan")
+    @ResponseBody
+    public Integer minusOneZan(String commentsId){
+        int commentsId1 = Integer.parseInt(commentsId);
+
+        commentService.minusOneZan(commentsId1);
+        return commentService.queryCommentsZan(commentsId1);
+    }
+
 }

@@ -40,6 +40,7 @@ public class LoginController {
         }
 
         HttpSession session = request.getSession();
+        session.setAttribute("user",user);
         session.setAttribute("loginUserId",user.getUserId());
         session.setAttribute("loginUserName",user.getUserName());
         return "<script>alert('登录成功');" +

@@ -28,4 +28,10 @@ public interface CommentService {
     void addSecondReply(int commentsId, String userName, String replyUserName, String replyContent);
 
     Reply queryLatestReply(int commentsId);
+
+    Integer queryCommentsZan(int commentsId);
+
+    int addOneZan(int commentsId);
+
+    int minusOneZan(int commentsId);
 }

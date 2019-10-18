@@ -47,7 +47,7 @@
                     <span>电话号码：</span>${user.phone}
                 </div>
                 <div class="panel-footer">
-                    <a href="updatePassword">修改密码</a>
+                    <a href="editPassword?email=${user.email}">修改密码</a>
                 </div>
             </div>
             <hr>
